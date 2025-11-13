@@ -3,7 +3,7 @@
 **CDE4301 Interim Report**
 
 **Instructor:** Khoo Eng Tat  
-**Team:** Liu Yuhui (Ula) A0266685L, Wang Yubo, Zhang Yining (A0258906R), Gao Jiquan (A0258910B)  
+**Team:** Liu Yuhui (Ula) (A0266685L), Wang Yubo, Zhang Yining (A0258906R), Gao Jiquan (A0258910B)  
 **Affiliation:** Singapore Airlines – NUS Digital Aviation Corp Lab  
 **Semester:** AY2025/26 Sem 1
 
@@ -114,7 +114,13 @@ The VR simulator continuously logs the following data:
 4. Physiological signals, such as heart rate and galvanic skin response (GSR), are used to estimate workload and stress levels. The indicators, such as GSR/HR, will indicate workload peaks explaining why lapses occur (stress vs. knowledge) (Harrivel et al., 2017).
 
 All data streams are aligned with the Observable Behaviors (OBs) defined under the IATA Evidence-Based Training (EBT) competency model. By correlating multimodal evidence with standardized OBs explained in Figure 3.1, the system provides objective, competency-based evaluation that is reproducible and aligned with established aviation training frameworks.
+<div align="center">
 
+![Figure 3.1 Mapping of data collection with OBs](assets/images/figure3-1.png)
+
+**Figure 3.1** Mapping of data collection with OBs
+
+</div>
 ![Figure 3.1 Mapping of data collection with OBs](assets/images/figure3-1.png)
 
 **Figure 3.1** Mapping of data collection with OBs
