@@ -121,9 +121,7 @@ All data streams are aligned with the Observable Behaviors (OBs) defined under t
 **Figure 3.1** Mapping of data collection with OBs
 
 </div>
-![Figure 3.1 Mapping of data collection with OBs](assets/images/figure3-1.png)
 
-**Figure 3.1** Mapping of data collection with OBs
 
 #### 3.2.2 AI-Assisted Report Generation
 
