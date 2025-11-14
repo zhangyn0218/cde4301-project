@@ -40,7 +40,7 @@ In addition to the website version of the report, the repository includes:
 
 These files support the methodology described in the report and are provided as part of the submission package.
 
-## 📜 Notes for Reviewers
+## Notes for Reviewers
 
 You may view the full report directly via the website link above.  
 
