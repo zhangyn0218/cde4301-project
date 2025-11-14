@@ -8,7 +8,7 @@ This repository contains the project website for the CDE4301 Interim Report.
 
 ## View the Website
 
-The website is hosted on GitHub Pages: [https://[username].github.io/[repository-name]/](https://[username].github.io/[repository-name]/)
+The website is hosted on GitHub Pages: [https://zhangyn0218.github.io/cde4301-project/](https://zhangyn0218.github.io/cde4301-project/)
 
 ## Repository Structure
 
