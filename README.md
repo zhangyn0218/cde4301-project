@@ -2,81 +2,47 @@
 
 This repository contains the project website for the CDE4301 Interim Report.
 
-**Team:** Liu Yuhui (Ula) A0266685L, Wang Yubo, Zhang Yining (A0258906R), Gao Jiquan (A0258910B)  
+**Team Members** 
+- Liu Yuhui (Ula) A0266685L
+- Wang Yubo (A0262295Y)
+- Zhang Yining (A0258906R)
+- Gao Jiquan (A0258910B)
+
 **Affiliation:** Singapore Airlines – NUS Digital Aviation Corp Lab  
 **Semester:** AY2025/26 Sem 1
 
-## View the Website
+## Project Website
 
-The website is hosted on GitHub Pages: [https://zhangyn0218.github.io/cde4301-project/](https://zhangyn0218.github.io/cde4301-project/)
+The complete interim report is published here: [https://zhangyn0218.github.io/cde4301-project/](https://zhangyn0218.github.io/cde4301-project/)
 
 ## Repository Structure
 
 ```
 .
-├── index.md          # Main content file with complete report
-├── _config.yml       # Jekyll configuration
-├── assets/           # Images, CSS, and other assets
-│   └── images/       # Project images and figures
-├── .gitignore        # Git ignore file
-└── README.md         # This file
+├── index.md                # Main content file with complete report
+├── _config.yml             # Jekyll configuration
+├── assets/                 # Images, CSS, and other assets
+│   └── images/             # Project images and figures
+├── ganttchart.pdf          # Project schedule for next semester
+├── Preprocess.py           # Preprocess Python Pipeline. Manual input version.
+├── PreprocessDedicated.py  # Preprocess Python Pipeline. Specific pair of log and video recording.
+├── .gitignore              # Git ignore file
+└── README.md               # This file
 ```
+All figures referenced in *index.md* are stored in `assets/images/`.
 
-## Adding Images
+## Supplementary Materials
 
-To add the figures referenced in the report:
+In addition to the website version of the report, the repository includes:
 
-1. Place all figure images in the `assets/images/` directory
-2. Name them according to the references in index.md:
-   - figure3-1.png (Mapping of data collection with OBs)
-   - figure4-1.png (Flowchart of VR Scenario Setup Process)
-   - figure4-2.png (Flight Path and Implanted PM Events)
-   - figure4-3.png (Example of Automatic Logging Output)
-   - figure4-4.png (Example of Filtered Excel)
-   - figure4-5.png (Sample of Filtered Speech Data)
-   - figure4-6.png (Sample of Cleaned and Corrected Speech Data)
-   - figure4-9.png (Cockpit Inward Vision and Element Segmentation)
-   - figure4-10.png (Typical Samples of High-Frequency Bursts)
-   - figure4-11.png (Typical Sample with Video of Data Missing Segments)
-   - figure4-12.png (Pie Charts of Eye Gaze Log Entry Components)
-   - figure4-13.png (Sample of Unmatched Entry–Exit Pairs)
-   - figure5-1.png (Gantt Chart - Sem 2 first half)
-   - figure5-2.png (Gantt Chart - Sem 2 second half)
+- **ganttchart.pdf** – Project schedule submitted for the interim review  
+- **Python scripts** (`Preprocess.py`, `PreprocessDedicated.py`) used during data preprocessing and log alignment
 
-## How to Edit
+These files support the methodology described in the report and are provided as part of the submission package.
 
-1. Edit the `index.md` file to update the content
-2. Add images to the `assets/images/` directory
-3. Update `_config.yml` to change the title and description
-4. Commit and push changes to GitHub
+## 📜 Notes for Reviewers
 
-## Local Development
-
-To run this site locally:
-
-```bash
-# Install Jekyll
-gem install bundler jekyll
-
-# Serve the site
-jekyll serve
-```
-
-Then visit `http://localhost:4000` in your browser.
-
-## GitHub Pages Setup
-
-1. Go to your repository Settings
-2. Navigate to Pages section
-3. Select the branch (usually `main` or `master`)
-4. Select the root `/` directory
-5. Click Save
-
-Your site will be published at `https://[username].github.io/[repository-name]/`
-
-## License
-
-This project is part of the CDE4301 course at the National University of Singapore.
+You may view the full report directly via the website link above.  
 
 ## Acknowledgments
 
