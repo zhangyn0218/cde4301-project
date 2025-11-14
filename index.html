@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-
+<script type="module" src="./assets/samples/video.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <meta charset="utf-8">
@@ -102,58 +102,93 @@ blockquote {
 </head>
 <body>
 <div class="container">
-<header>
-  <h1>AI-Assisted Evaluation for Pilot Monitoring Training in VR-Based Flight Simulators</h1>
-  <div class="meta">Generated from Markdown on 2025-11-14 09:51 (fallback converter)</div>
-</header>
-<hr>
+
 <h1>AI-Assisted Evaluation for Pilot Monitoring Training in VR-Based Flight Simulators</h1>
 
-<p><strong>CDE4301 Interim Report</strong></p>
+<p style="text-align: right;"><strong>CDE4301 Interim Report</strong></p>
 
-<p><strong>Instructor:</strong> Khoo Eng Tat  
-<strong>Team:</strong> Liu Yuhui (Ula) A0266685L, Wang Yubo, Zhang Yining (A0258906R), Gao Jiquan (A0258910B)  
-<strong>Affiliation:</strong> Singapore Airlines – NUS Digital Aviation Corp Lab  
-<strong>Semester:</strong> AY2025/26 Sem 1</p>
+<p><strong>Instructor:</strong> Khoo Eng Tat  </p>
+<p><strong>Team:</strong> Liu Yuhui (Ula) (A0266685L), Wang Yubo (A0262295Y), Zhang Yining (A0258906R), Gao Jiquan (A0258910B)  </p>
+<p><strong>Affiliation:</strong> Singapore Airlines – NUS Digital Aviation Corp Lab  </p>
+<p><strong>Semester:</strong> AY2025/26 Sem 1</p>
+<p><strong>Link to Github Repo:</strong> <a href="https://github.com/zhangyn0218/cde4301-project" target="_blank">
+    https://github.com/zhangyn0218/cde4301-project
+  </a></p>
 
 <p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#abstract">Abstract</a></li>
-<li><a href="#1-introduction-and-background">1. Introduction and Background</a></li>
-<li><a href="#11-context-and-motivation">1.1 Context and Motivation</a></li>
-<li><a href="#12-project-objective">1.2 Project Objective</a></li>
-<li><a href="#2-vr-based-training-expansion-in-the-lack-of-accessible-full-flight-simulators">2. VR-based Training Expansion in the Lack of Accessible Full-Flight Simulators</a></li>
-<li><a href="#21-problem-scalability--cost">2.1 Problem (Scalability &amp; Cost)</a></li>
-<li><a href="#22-solution-vr-based-training-simulator">2.2 Solution (VR-Based Training Simulator)</a></li>
-<li><a href="#23-potential-directions">2.3 Potential Directions</a></li>
-<li><a href="#24-value-proposition">2.4 Value Proposition</a></li>
-<li><a href="#3-ai-feedback-for-self-directed-learning-in-the-absence-of-a-pilot-instructor">3. AI Feedback for Self-Directed Learning in the Absence of a Pilot Instructor</a></li>
-<li><a href="#31-problems-training-without-data-and-instructor-bottleneck">3.1 Problems (Training Without Data and Instructor Bottleneck)</a></li>
-<li><a href="#32-solution-multimodal-data-collection-and-ai-feedback-report">3.2 Solution (Multimodal Data Collection and AI Feedback Report)</a></li>
-<li><a href="#33-potential-directions">3.3 Potential Directions</a></li>
-<li><a href="#34-value-proposition">3.4 Value Proposition</a></li>
-<li><a href="#4-prototyping--preliminary-findings-ay202526-sem-1">4. Prototyping &amp; Preliminary Findings (AY2025/26 Sem 1)</a></li>
-<li><a href="#41-vr-scenario-setup--key-events">4.1 VR Scenario Setup &amp; Key Events</a></li>
-<li><a href="#42-logging--synchronization-workflow">4.2 Logging &amp; Synchronization Workflow</a></li>
-<li><a href="#43-data-preprocessing-pipeline">4.3 Data Preprocessing Pipeline</a></li>
-<li><a href="#44-speech-recognition-wer--error-patterns">4.4 Speech Recognition: WER &amp; Error Patterns</a></li>
-<li><a href="#45-eye-gaze-logs-artifacts--reliability">4.5 Eye-Gaze Logs: Artifacts &amp; Reliability</a></li>
-<li><a href="#5-future-goals--gantt-chart-ay202526-sem-2-plan">5. Future Goals &amp; Gantt Chart (AY2025/26 Sem 2 Plan)</a></li>
-<li><a href="#51-testing--validation">5.1 Testing &amp; Validation</a></li>
-<li><a href="#52-integration--experiments--ai-report">5.2 Integration &amp; Experiments → AI Report</a></li>
-<li><a href="#6-conclusion">6. Conclusion</a></li>
-<li><a href="#references">References</a></li>
-<li><a href="#appendix">Appendix</a></li>
-</ul></p>
+  <li><a href="#abstract">Abstract</a></li>
+
+  <li>
+    <a href="#1-introduction-and-background">1. Introduction and Background</a>
+    <ul>
+      <li>1.1 Context and Motivation</li>
+      <li>1.2 Project Objective</li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#2-vr-based-training-expansion-in-the-lack-of-accessible-full-flight-simulators">
+      2. VR-based Training Expansion in the Lack of Accessible Full-Flight Simulators
+    </a>
+    <ul>
+      <li>2.1 Problem (Scalability &amp; Cost)</li>
+      <li>2.2 Solution (VR-Based Training Simulator)</li>
+      <li>2.3 Potential Directions</li>
+      <li>2.4 Value Proposition</li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#3-ai-feedback-for-self-directed-learning-in-the-absence-of-a-pilot-instructor">
+      3. AI Feedback for Self-Directed Learning in the Absence of a Pilot Instructor
+    </a>
+    <ul>
+      <li>3.1 Problems (Training Without Data and Instructor Bottleneck)</li>
+      <li>3.2 Solution (Multimodal Data Collection and AI Feedback Report)</li>
+      <li>3.3 Potential Directions</li>
+      <li>3.4 Value Proposition</li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#4-prototyping--preliminary-findings-ay202526-sem-1">
+      4. Prototyping &amp; Preliminary Findings (AY2025/26 Sem 1)
+    </a>
+    <ul>
+      <li>4.1 VR Scenario Setup &amp; Key Events</li>
+      <li>4.2 Logging &amp; Synchronization Workflow</li>
+      <li>4.3 Data Preprocessing Pipeline</li>
+      <li>4.4 Speech Recognition: WER &amp; Error Patterns</li>
+      <li>4.5 Eye-Gaze Logs: Artifacts &amp; Reliability</li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#5-future-goals--gantt-chart-ay202526-sem-2-plan">
+      5. Future Goals &amp; Gantt Chart (AY2025/26 Sem 2 Plan)
+    </a>
+    <ul>
+      <li>5.1 Testing &amp; Validation</li>
+      <li>5.2 Integration &amp; Experiments → AI Report</li>
+    </ul>
+  </li>
+
+  <li><a href="#6-conclusion">6. Conclusion</a></li>
+  <li><a href="#references">References</a></li>
+  <li><a href="#appendix">Appendix</a></li>
+</ul>
+
+</p>
 
 <p>
-<h2>Abstract</h2></p>
+<h2 id="abstract">Abstract</h2></p>
 
 <p>Pilot Monitoring (PM) plays a critical role in flight safety through situational awareness, cross-checking, and timely callouts. However, current PM training remains resource-intensive, subjective, and constrained by instructor and simulator availability. This project proposes a VR-based, AI-assisted evaluation framework to enhance scalability and objectivity in PM training. The prototype integrates eye-tracking, speech recognition, and event logging within a realistic Busan approach scenario to generate multimodal evidence aligned with Competency-Based Training and Assessment (CBTA) competencies. Preliminary tests identify synchronization and speech-recognition challenges but confirm the feasibility of automated performance capture. By transforming training sessions into traceable, data-driven feedback reports, this work aims to shift PM evaluation from score-centric to explanation-centric learning, improving transparency, consistency, and self-training efficiency.</p>
 
 <p>
-<h2>1. Introduction and Background</h2>
+<h2 id="1-introduction-and-background">1. Introduction and Background</h2>
 <h3>1.1 Context and Motivation</h3></p>
 
 <p>Modern flight safety depends on the coordination between the Pilot Flying (PF) and the Pilot Monitoring (PM). The PM maintains situational awareness, cross-checks flight parameters, manages communications, and intervenes when deviations occur. The International Federation of Air Line Pilots' Associations emphasizes that effective PM "enhances situational awareness and reduces operational errors" (IFALPA, 2024). However, despite its critical importance, PM training and assessment remain largely manual, subjective, and resource-intensive, lagging behind advances in simulator fidelity and automation (IFALPA, 2024).
@@ -162,7 +197,7 @@ blockquote {
 <p>We develop a VR-based PM evaluation ecosystem that (i) scales training capacity, and (ii) converts sessions into objective evidence via multimodal capture (gaze, speech, events, physiology) and AI-assisted reports, aligned to CBTA/EBT competency outcomes (IATA, 2024; IATA, 2025).</p>
 
 <p>
-<h2>2. VR-based Training Expansion in the Lack of Accessible Full-Flight Simulators</h2>
+<h2 id="2-vr-based-training-expansion-in-the-lack-of-accessible-full-flight-simulators">2. VR-based Training Expansion in the Lack of Accessible Full-Flight Simulators</h2>
 <h3>2.1 Problem (Scalability & Cost)</h3></p>
 
 <p>Full Flight Simulators (FFS) remain the gold standard for pilot training, offering high realism and motion feedback essential for competency-based assessment. However, they are extremely expensive—each unit costs around USD 20 million and requires specialized facilities, maintenance staff, and scheduling coordination. Despite their effectiveness, the limited global fleet of FFS units cannot keep pace with the projected demand for approximately 650,000 new pilots by 2043 (Boeing, 2025; CAE, 2025). Moreover, each training session depends on the availability of certified instructors and fixed motion-device time slots, further constraining throughput and accessibility. As a result, the current FFS-based model struggles to scale efficiently, creating a bottleneck that restricts training capacity and delays the development of essential pilot monitoring competencies.
@@ -189,8 +224,8 @@ blockquote {
 <p>VR systems also incur substantially lower lifecycle costs: lower power consumption and less technical downtime. According to Cambridge University's Assessment of Evidence-Based Training in a Collaborative VR Flight Simulator (2025), VR training devices "enable multiple trainees to participate simultaneously, addressing bottlenecks in training schedules while maintaining comparable procedural effectiveness."</p>
 
 <p>
-<h2>3. AI Feedback for Self-Directed Learning in the Absence of a Pilot Instructor</h2>
-<h3>3.1 Problems (Training Without Data and Instructor Bottleneck)</h3></p>
+<h2 id="3-ai-feedback-for-self-directed-learning-in-the-absence-of-a-pilot-instructor">3. AI Feedback for Self-Directed Learning in the Absence of a Pilot Instructor</h2>
+<h3>3.1 Problem (Training Without Data and Instructor Bottleneck)</h3></p>
 
 <p>Even within advanced simulator environments, critical training data often remain inaccessible outside the system, making real-time debriefing difficult and forcing instructors to rely on memory-based observations rather than objective evidence (IATA, 2024). This lack of data weakens feedback quality and consistency. Intensifying the issue, instructor availability has not kept pace with the growing number of trainees, resulting in delays and reducing opportunities for detailed, behavior-specific coaching. Human-factors research further highlights that many Pilot Monitoring (PM) lapses arise from subtle attention breakdowns and delayed anomaly detection, which are issues that are difficult to capture through traditional observation alone (Mumaw et al., 2021; Dismukes & Berman, 2021).
 <h3>3.2 Solution (Multimodal Data Collection and AI Feedback Report)</h3></p>
@@ -246,7 +281,7 @@ blockquote {
 <p>Instructor shortages and limited FFS simulation opportunities have constrained the scalability of traditional training programs. The proposed multimodal-AI architecture transforms the training ecosystem from an individual assessment model to a data-driven analytical platform capable of institutional learning. The proposed framework therefore supports large-scale analytics capable of identifying common weaknesses among PMs (e.g., delayed scan initiation, communication lapses, checklist deviations) and quantifying training effectiveness over time. These insights provide evidence-based scenario design and optimized instructor resource allocation.</p>
 
 <p>
-<h2>4. Prototyping & Preliminary Findings (AY2025/26 Sem 1)</h2></p>
+<h2 id="4-prototyping--preliminary-findings-ay202526-sem-1">4. Prototyping & Preliminary Findings (AY2025/26 Sem 1)</h2></p>
 
 <p>This part provides how the VR training prototype was deployed, evaluated, and instrumented for multimodal data collection. It begins by describing the scenario setup and the embedded pilot-monitoring events used to assess trainee responses in a controlled flight-approach sequence. The logging infrastructure, comprising speech recognition, eye-tracking, and automatic control-event capture, is then introduced together with the temporal synchronization workflow required to align these heterogeneous data streams with screen recordings. Next, the section outlines the Python-based preprocessing pipeline developed to convert raw logs into structured, analysis-ready formats. Finally, preliminary evaluations of the speech-recognition and eye-gaze modules are presented by the system, highlighting current system capabilities, observed artifacts, and limitations that would be discussed respectively in the following sections. Collectively, these components form the foundation for subsequent multimodal analysis of trainee behaviour in the VR environment.
 <h3>4.1 VR Scenario Setup & Key Events</h3></p>
@@ -272,6 +307,14 @@ blockquote {
 <p>In Figure 4.2, blue words along with the grey boxes refer to the way points along the flight path in the scenario. Pilot monitoring tasks are stated by sequence under them. The red highlighted boxes refer to the introduction period of the errors.</p>
 
 <p>Each of the three embedded human-error events is triggered at specific waypoints along the approach. Trainees are required to identify and resolve these errors in real time. If no corrective action is taken, the scenario will automatically execute a correction to ensure continuity of the simulation.</p>
+
+<video-component 
+    tag="demo" 
+    source="https://www.youtube.com/embed/3DR5oMJpU3M"
+    subtitle="Video: Demo Flight Training"
+></video-component>
+
+
 
 <p>During testing, the trainee was able to perform pilot-monitoring (PM) tasks in , and the scenario responded appropriately to the user's actions. This demonstrates that the VR environment can replicate key procedural aspects of flight training.</p>
 
@@ -393,7 +436,11 @@ blockquote {
 
 <figure><img src="assets/images/figure4-10-1.png" alt="Figure 4.10 Typical Samples of High-Frequency Bursts"></figure>
 <figure><img src="assets/images/figure4-10-2.png" alt="Figure 4.10 Typical Samples of High-Frequency Bursts"><figcaption>Figure 4.10 Typical Samples of High-Frequency Bursts</figcaption></figure>
-
+<video-component 
+    tag="sample" 
+    source="https://www.youtube.com/embed/D-XMXPC-_Cc"
+    subtitle="Video: Pattern 1 from Sample B"
+></video-component>
 <p>
 <h4>4.5.2 Data Gaps and Missing Segments</h4></p>
 
@@ -404,8 +451,14 @@ blockquote {
 
 
 
-<p>The most probable causes include momentary signal loss due to eye blinks, partial occlusion of the sensors by eyelids or reflections from the headset lens, and occasional latency within the eye-tracking software pipeline. In some instances, these missing segments also coincide with rapid head movements, which can momentarily shift the gaze beyond the calibrated tracking region.
-<h4>4.5.3 Left-Right Eye Imbalance</h4></p>
+<p>The most probable causes include momentary signal loss due to eye blinks, partial occlusion of the sensors by eyelids or reflections from the headset lens, and occasional latency within the eye-tracking software pipeline. In some instances, these missing segments also coincide with rapid head movements, which can momentarily shift the gaze beyond the calibrated tracking region.</p>
+<video-component 
+    tag="sample" 
+    source="https://www.youtube.com/embed/3QGXYC4BsjA"
+    subtitle="Video: Pattern 2 from Sample B"
+></video-component>
+
+<p><h4>4.5.3 Left-Right Eye Imbalance</h4></p>
 
 <p>An additional irregularity observed in the gaze data was the imbalance between left- and right-eye recordings. As illustrated in Figure 4.12, the proportion of entries generated by each eye varied considerably across samples. In Sample A, right-eye events accounted for approximately 60% of all records, whereas in Sample B, the trend reversed, with the left eye contributing about 65%.</p>
 
@@ -432,7 +485,7 @@ blockquote {
 <p>Overall, the gaze logs are sufficient for identifying major attention shifts between cockpit instruments but not yet precise enough for detailed fixation analysis. Future improvements should therefore focus on refining region boundaries, stabilizing signal capture, and automating artifact detection to enhance the accuracy and consistency of gaze-based behavioral evaluation.</p>
 
 <p>
-<h2>5. Future Goals & Gantt Chart (AY2025/26 Sem 2 Plan)</h2>
+<h2 id="5-future-goals--gantt-chart-ay202526-sem-2-plan">5. Future Goals & Gantt Chart (AY2025/26 Sem 2 Plan)</h2>
 <h3>5.1 Testing & Validation</h3></p>
 
 <p>In the first half of the project, the work will focus on testing and validation to prepare the system for full-scale integration. The VR flight scenario will be expanded by developing additional interactive cockpit components, including the autopilot system, the Mode Control Panel, altitude and heading selectors, and the Control Display Unit/Flight Management Computer pages. These enhancements aim to increase operational fidelity and support more authentic pilot-monitoring interactions.</p>
@@ -469,12 +522,12 @@ blockquote {
 
 
 <p>
-<h2>6. Conclusion</h2></p>
+<h2 id="6-conclusion">6. Conclusion</h2></p>
 
 <p>This project establishes a foundation for modernizing Pilot Enhancing Monitoring (PM) training through a dual-focus approach: accessibility via VR-based simulation and improving objectivity through multimodal, AI-assisted evaluation. The prototype demonstrates that immersive VR environments can replicate key procedural elements of flight monitoring, while integrated gaze, speech, and event data enable deeper insight into trainee performance beyond traditional observation. Preliminary findings have clarified both technical challenges and methodological opportunities, leading to the next phase of system integration and evaluation. Moving forward, the project will focus on refining data synchronization, enhancing recognition accuracy, and using AI to learn how different inputs can be combined into meaningful, evidence-based feedback. Ultimately, our work aims to shift PM training toward a more transparent, scalable, and learner-centered paradigm—one that emphasizes understanding and improvement over bare numerical scoring.</p>
 
 <p>
-<h2>References</h2></p>
+<h2 id="references">References</h2></p>
 
 <p>Ahlstrom, U., & Friedman-Berg, F. J. (2006). Using eye movement activity as a correlate of cognitive workload. <em>International Journal of Industrial Ergonomics, 36</em>(7), 623–636. https://doi.org/10.1016/j.ergon.2006.04.002</p>
 
@@ -535,13 +588,23 @@ blockquote {
 <p>Zhou, J., Jung, J. Y., & Chen, F. (2015). Dynamic workload adjustments in human-machine systems based on GSR features. In J. Abascal, S. B Shum, & M. Fetter (Eds.), <em>Human-Computer Interaction – INTERACT 2015, Part I</em> (Lecture Notes in Computer Science, Vol. 9296, pp. 550-558). Springer. https://link-springer-com.libproxy1.nus.edu.sg/chapter/10.1007/978-3-319-22701-6_40</p>
 
 <p>
-<h2>Appendix</h2>
+<h2 id="appendix">Appendix</h2>
 <h3>Python Script for Data Preprocessing</h3>
 <p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/Preprocess.py" target="_blank">
   View Python File on GitHub: Preprocess Python Pipeline. Manual input version.
 </a></p>
 <p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/PreprocessDedicated.py" target="_blank">
   View Python File on GitHub: Preprocess Python Pipeline. Specific pair of log and video recording.
+</a></p>
+<h3>Sample Event Logs for Illustration</h3>
+<p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/assets/samples/SampleA_LRL.xlsx" target="_blank">
+  View Excel File on GitHub: Sample A from Provided Dataset.
+</a></p>
+<p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/assets/samples/SampleB_LRR.xlsx" target="_blank">
+  View Excel File on GitHub: Sample B in Noisy Environment.
+</a></p>
+<p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/assets/samples/SampleC.xlsx" target="_blank">
+  View Excel File on GitHub: Sample C in Quite Condition.
 </a></p>
 </div>
 <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
