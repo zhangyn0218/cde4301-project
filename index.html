@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI-Assisted Evaluation for Pilot Monitoring Training in VR-Based Flight Simulators</title>
@@ -94,6 +98,7 @@ blockquote {
 .toc h2 { margin-top: 0; border: none; }
 
 </style>
+<script src="./assets/Tables/Table_1.js"></script>
 </head>
 <body>
 <div class="container">
@@ -111,7 +116,7 @@ blockquote {
 <strong>Affiliation:</strong> Singapore Airlines – NUS Digital Aviation Corp Lab  
 <strong>Semester:</strong> AY2025/26 Sem 1</p>
 
-<p>---
+<p>
 <h2>Table of Contents</h2>
 <ul>
 <li><a href="#abstract">Abstract</a></li>
@@ -142,12 +147,12 @@ blockquote {
 <li><a href="#appendix">Appendix</a></li>
 </ul></p>
 
-<p>---
+<p>
 <h2>Abstract</h2></p>
 
 <p>Pilot Monitoring (PM) plays a critical role in flight safety through situational awareness, cross-checking, and timely callouts. However, current PM training remains resource-intensive, subjective, and constrained by instructor and simulator availability. This project proposes a VR-based, AI-assisted evaluation framework to enhance scalability and objectivity in PM training. The prototype integrates eye-tracking, speech recognition, and event logging within a realistic Busan approach scenario to generate multimodal evidence aligned with Competency-Based Training and Assessment (CBTA) competencies. Preliminary tests identify synchronization and speech-recognition challenges but confirm the feasibility of automated performance capture. By transforming training sessions into traceable, data-driven feedback reports, this work aims to shift PM evaluation from score-centric to explanation-centric learning, improving transparency, consistency, and self-training efficiency.</p>
 
-<p>---
+<p>
 <h2>1. Introduction and Background</h2>
 <h3>1.1 Context and Motivation</h3></p>
 
@@ -156,7 +161,7 @@ blockquote {
 
 <p>We develop a VR-based PM evaluation ecosystem that (i) scales training capacity, and (ii) converts sessions into objective evidence via multimodal capture (gaze, speech, events, physiology) and AI-assisted reports, aligned to CBTA/EBT competency outcomes (IATA, 2024; IATA, 2025).</p>
 
-<p>---
+<p>
 <h2>2. VR-based Training Expansion in the Lack of Accessible Full-Flight Simulators</h2>
 <h3>2.1 Problem (Scalability & Cost)</h3></p>
 
@@ -183,7 +188,7 @@ blockquote {
 
 <p>VR systems also incur substantially lower lifecycle costs: lower power consumption and less technical downtime. According to Cambridge University's Assessment of Evidence-Based Training in a Collaborative VR Flight Simulator (2025), VR training devices "enable multiple trainees to participate simultaneously, addressing bottlenecks in training schedules while maintaining comparable procedural effectiveness."</p>
 
-<p>---
+<p>
 <h2>3. AI Feedback for Self-Directed Learning in the Absence of a Pilot Instructor</h2>
 <h3>3.1 Problems (Training Without Data and Instructor Bottleneck)</h3></p>
 
@@ -206,7 +211,7 @@ blockquote {
 
 <figure><img src="assets/images/figure3-1.png" alt="Figure 3.1 Mapping of data collection with OBs"><figcaption>Figure 3.1 Mapping of data collection with OBs</figcaption></figure>
 
-<p><strong>Figure 3.1</strong> Mapping of data collection with OBs
+<p>
 <h4>3.2.2 AI-Assisted Report Generation</h4></p>
 
 <p>The second component of this solution is an AI-assisted report generator that automatically interprets the collected multimodal data.</p>
@@ -240,7 +245,7 @@ blockquote {
 
 <p>Instructor shortages and limited FFS simulation opportunities have constrained the scalability of traditional training programs. The proposed multimodal-AI architecture transforms the training ecosystem from an individual assessment model to a data-driven analytical platform capable of institutional learning. The proposed framework therefore supports large-scale analytics capable of identifying common weaknesses among PMs (e.g., delayed scan initiation, communication lapses, checklist deviations) and quantifying training effectiveness over time. These insights provide evidence-based scenario design and optimized instructor resource allocation.</p>
 
-<p>---
+<p>
 <h2>4. Prototyping & Preliminary Findings (AY2025/26 Sem 1)</h2></p>
 
 <p>This part provides how the VR training prototype was deployed, evaluated, and instrumented for multimodal data collection. It begins by describing the scenario setup and the embedded pilot-monitoring events used to assess trainee responses in a controlled flight-approach sequence. The logging infrastructure, comprising speech recognition, eye-tracking, and automatic control-event capture, is then introduced together with the temporal synchronization workflow required to align these heterogeneous data streams with screen recordings. Next, the section outlines the Python-based preprocessing pipeline developed to convert raw logs into structured, analysis-ready formats. Finally, preliminary evaluations of the speech-recognition and eye-gaze modules are presented by the system, highlighting current system capabilities, observed artifacts, and limitations that would be discussed respectively in the following sections. Collectively, these components form the foundation for subsequent multimodal analysis of trainee behaviour in the VR environment.
@@ -256,13 +261,13 @@ blockquote {
 
 <figure><img src="assets/images/figure4-1.png" alt="Figure 4.1 Flowchart of VR Scenario Setup Process"><figcaption>Figure 4.1 Flowchart of VR Scenario Setup Process</figcaption></figure>
 
-<p><strong>Figure 4.1</strong> Flowchart of VR Scenario Setup Process</p>
+
 
 <p>Based on this, we implemented a Busan approach procedure incorporating three pilot-monitoring (PM)-relevant events: LNAV not re-engaged, Wrong Runway alignment, and High on Profile (IFALPA, 2024). Figure 4.2 illustrates the flight path used in the scenario.</p>
 
 <figure><img src="assets/images/figure4-2.png" alt="Figure 4.2 Flight Path and Implanted PM Events"><figcaption>Figure 4.2 Flight Path and Implanted PM Events</figcaption></figure>
 
-<p><strong>Figure 4.2</strong> Flight Path and Implanted PM Events</p>
+
 
 <p>In Figure 4.2, blue words along with the grey boxes refer to the way points along the flight path in the scenario. Pilot monitoring tasks are stated by sequence under them. The red highlighted boxes refer to the introduction period of the errors.</p>
 
@@ -277,39 +282,47 @@ blockquote {
 
 <figure><img src="assets/images/figure4-3.png" alt="Figure 4.3 Example of Automatic Logging Output"><figcaption>Figure 4.3 Example of Automatic Logging Output</figcaption></figure>
 
-<p><strong>Figure 4.3</strong> Example of Automatic Logging Output (Manual Highlight for Illustration)</p>
 
-<p>To enable cross-modal analysis, temporal synchronization between the event logs and screen recordings is required. However, because the video recording is manually initiated while the log recording starts automatically upon scenario launch, a non-zero time offset exists between the two datasets. Let the actual synchronization offset be denoted as Δt_sync.</p>
+
+<p>To enable cross-modal analysis, temporal synchronization between the event logs and screen recordings is required. However, because the video recording is manually initiated while the log recording starts automatically upon scenario launch, a non-zero time offset exists between the two datasets. Let the actual synchronization offset be denoted as \(t_{\text{sync}}\).</p>
 
 <p>Two measurable components contribute to this offset:</p>
 
-<p>1. Δt_file: the delay value encoded in the video filename, representing the difference between the log start time and video start time as recorded by the operator.
-2. Δt_event: the time shift estimated by matching a distinct event visible in both the video and log (e.g., the frame where flap movement occurs or a verbal command is recognized).</p>
+<p>1. \(t_{\text{file}}\): the delay value encoded in the video filename, representing the difference between the log start time and video start time as recorded by the operator.</p>
+<p>2. \(t_{\text{event}}\): the time shift estimated by matching a distinct event visible in both the video and log (e.g., the frame where flap movement occurs or a verbal command is recognized).</p>
 
 <p>The total synchronization offset is therefore approximated as:</p>
 
-<p><strong>Δt_sync = Δt_file + Δt_event</strong></p>
+<p>
+    \[
+      \Delta t_{\text{sync}} = \Delta t_{\text{file}} + \Delta t_{\text{event}}
+    \]
+  </p>
 
-<p>Applying this correction aligns the video timeline t_video to the log timeline through:</p>
+<p>Applying this correction aligns the video timeline \(t_{\text{video}}\) to the log timeline through:</p>
 
-<p><strong>t_aligned = t_video + Δt_sync</strong></p>
+<p>
+    \[
+      t_{\text{aligned}} = t_{\text{video}} + \Delta t_{\text{sync}}
+    \]
+  </p>
 
 <p>This method provides a practical means of achieving temporal consistency across data sources without requiring hardware-level clock synchronization. The resulting alignment allows each visual frame to be associated with corresponding speech, gaze, and control events, enabling detailed multimodal analysis of trainee behavior and system response during the VR session.
 <h3>4.3 Data Preprocessing Pipeline</h3></p>
 
 <p>The original event logs were exported in CSV format, where each entry followed the structure:</p>
 
-<p><strong>[Time] Category:Description</strong></p>
+<p style="text-align: center; font-style: italic;">[Time] Category:Description</p>
 
 <p>For example, an event entry may appear as:</p>
 
-<p><strong>[409.1554] EVENTCODE:VARY_SPEED</strong></p>
+<p style="text-align: center; font-style: italic;">[409.1554] EVENTCODE:VARY_SPEED</p>
 
 <p>While this format preserves temporal information, it is not user-friendly for analysis or correlation across multimodal datasets. To address this, we developed Python-based data conversion and structuring pipeline (refer to Appendix A for full implementation). The script automatically parses the raw CSV logs and converts them into a filterable Excel workbook, enabling straightforward sorting, searching, and cross-session comparison of events. Figure 4.4 presents an example of converted Excel output, which corresponds to the same period as shown in Figure 4.3.</p>
 
 <figure><img src="assets/images/figure4-4.png" alt="Figure 4.4 Example of Filtered Excel"><figcaption>Figure 4.4 Example of Filtered Excel</figcaption></figure>
 
-<p><strong>Figure 4.4</strong> Example of Filtered Excel (Manual Highlight for Illustration)</p>
+
 
 <p>The implementation makes use of the pandas and openpyxl libraries. The pandas package handles text parsing, pattern extraction, and numerical conversion, while openpyxl enables Excel writing, column resizing, and auto-filtering. The script reads the raw log line by line, extracts timestamps, event titles, and descriptions using regular expressions, and computes aligned timestamps with user-specified offsets. These timestamps are then converted into a more interpretable mm:ss format using a custom formatter.</p>
 
@@ -322,25 +335,25 @@ blockquote {
 
 <figure><img src="assets/images/figure4-5.png" alt="Figure 4.5 Sample of Filtered Speech Data"><figcaption>Figure 4.5 Sample of Filtered Speech Data</figcaption></figure>
 
-<p><strong>Figure 4.5</strong> Sample of Filtered Speech Data</p>
+
 
 <figure><img src="assets/images/figure4-6.png" alt="Figure 4.6 Sample of Cleaned and Corrected Speech Data"><figcaption>Figure 4.6 Sample of Cleaned and Corrected Speech Data</figcaption></figure>
 
-<p><strong>Figure 4.6</strong> Sample of Cleaned and Corrected Speech Data</p>
+
 
 <p>Figure 4.6 shows the manually cleaned versions, where missing or truncated phrases were filled in to match the actual spoken content.</p>
 
 <p>To quantify recognition accuracy, we use the Word Error Rate (WER) calculation, a standard metric in speech-recognition evaluation defined as:</p>
 
-<p><strong>WER = (Substitution + Deletion + Insertion) / Number of Words</strong></p>
+<p>\[
+    \mathrm{WER} = \frac{\text{Substitution} + \text{Deletion} + \text{Insertion}}{\text{Number of Words}}
+  \]</p>
 
 <p>Features and results of the 3 tested samples by us are as shown in Table 4.7:</p>
 
-<p>| Sample | Features | WER |
-|--------|----------|-----|
-| A | Provided Datasets | 34.5% |
-| B | Relatively Noisy Environment | 45.1% |
-| C | Quiet Conditions | 32.2% |</p>
+<table-component subtitle="Table 4.7 Example of Filtered Excel">
+    <div id="table-1"></div>
+</table-component>
 
 <p><strong>Table 4.7</strong> Example of Filtered Excel</p>
 
@@ -350,11 +363,9 @@ blockquote {
 
 <p>However, several recognition errors were found to have semantic significance that could impact scenario logic. Notable examples are shown in Table 4.8:</p>
 
-<p>| Intended Phrase | Recognized Output | Impact |
-|----------------|-------------------|---------|
-| LNAV not engaged | Dial Neff not engaged | Alters meaning of navigation mode error |
-| Direct to AB18R | Direct to a bit money right | Corrupts runway identifier |
-| Wrong runway | Run runway | Prevents triggering of the 'Wrong Runway' event |</p>
+<table-component subtitle="Table 4.8 Examples of Notable Speech Recognition Mismatch">
+    <div id="table-2"></div>
+</table-component>
 
 <p><strong>Table 4.8</strong> Examples of Notable Speech Recognition Mismatch</p>
 
@@ -363,42 +374,45 @@ blockquote {
 
 <p>The second data modality analyzed was the eye-gaze tracking logs, which record trainees' visual attention across cockpit interfaces. Each entry contains four main fields:</p>
 
-<p><strong>eyeIdentifier_action_elements remarks</strong></p>
+<p style="text-align: center; font-style: italic;">eyeIdentifier_action_elements remarks</p>
 
 <p>For example, an eye gaze entry may appear as:</p>
 
-<p><strong>right_enter_PFD speed</strong></p>
+<p style="text-align: center; font-style: italic;">right_enter_PFD speed</p>
 
 <p>The cockpit display as shown in Figure 4.9 is divided into distinct visual regions, such as the Mode Control Panel (MCP), Navigation Display (ND), Primary Flight Display (PFD), and Flight Management Computer (FMC). A example of region division is on the right.</p>
+<figure><img src="assets/images/figure4-9-1.png" alt="Figure 4.9.1 Cockpit Inward Vision and Element Segmentation"></figure>
+<figure><img src="assets/images/figure4-9-2.png" alt="Figure 4.9.2 Cockpit Inward Vision and Element Segmentation"><figcaption>Figure 4.9 Cockpit Inward Vision and Element Segmentation</figcaption></figure>
 
-<figure><img src="assets/images/figure4-9.png" alt="Figure 4.9 Cockpit Inward Vision and Element Segmentation"><figcaption>Figure 4.9 Cockpit Inward Vision and Element Segmentation</figcaption></figure>
 
-<p><strong>Figure 4.9</strong> Cockpit Inward Vision and Element Segmentation</p>
 
 <p>A new record is generated whenever the user's gaze crosses into or out of one of these defined regions. From the processed data, four preliminary artifact patterns were observed, summarized below.
 <h4>4.5.1 High-Frequency Bursts</h4></p>
 
 <p>One of the most prominent artifacts observed in the eye-gaze data was the occurrence of high-frequency bursts, characterized by clusters of rapidly alternating enter and exit events within short time intervals. These bursts typically appear as dense sequences in the event timeline, often spanning only a few seconds but containing numerous transitions between adjacent cockpit elements. Such patterns do not correspond to deliberate scanning behavior; instead, they likely arise from the instability of gaze boundary detection. When the fixation point falls near the edge between two interface regions, for samples in Figure 4.10, between the Mode Control Panel (MCP) and the middle window, minor fluctuations in gaze estimation can cause repeated crossings of the region boundary, resulting in multiple spurious entries in the log.</p>
 
-<figure><img src="assets/images/figure4-10.png" alt="Figure 4.10 Typical Samples of High-Frequency Bursts"><figcaption>Figure 4.10 Typical Samples of High-Frequency Bursts</figcaption></figure>
+<figure><img src="assets/images/figure4-10-1.png" alt="Figure 4.10 Typical Samples of High-Frequency Bursts"></figure>
+<figure><img src="assets/images/figure4-10-2.png" alt="Figure 4.10 Typical Samples of High-Frequency Bursts"><figcaption>Figure 4.10 Typical Samples of High-Frequency Bursts</figcaption></figure>
 
-<p><strong>Figure 4.10</strong> Typical Samples of High-Frequency Bursts
+<p>
 <h4>4.5.2 Data Gaps and Missing Segments</h4></p>
 
 <p>Another recurring issue identified in the gaze recordings was the presence of data gaps and missing segments. These appear as prolonged intervals in the event log where no gaze activity is recorded, despite the video evidence showing continuous visual fixation by the user. For example, as shown in Figure 4.11, there are only records of eye gaze data on the Primary Flight Display (PFD), while the recorded video shows a a few seconds of fixations on the middle window. Such discontinuities suggest temporary interruptions in data acquisition rather than genuine lapses in attention.</p>
 
-<figure><img src="assets/images/figure4-11.png" alt="Figure 4.11 Typical Sample with Video of Data Missing Segments"><figcaption>Figure 4.11 Typical Sample with Video of Data Missing Segments</figcaption></figure>
+<figure><img src="assets/images/figure4-11-1.png" alt="Figure 4.11 Typical Sample with Video of Data Missing Segments"></figure>
+<figure><img src="assets/images/figure4-11-2.png" alt="Figure 4.11 Typical Sample with Video of Data Missing Segments"><figcaption>Figure 4.11 Typical Sample with Video of Data Missing Segments</figcaption></figure>
 
-<p><strong>Figure 4.11</strong> Typical Sample with Video of Data Missing Segments</p>
+
 
 <p>The most probable causes include momentary signal loss due to eye blinks, partial occlusion of the sensors by eyelids or reflections from the headset lens, and occasional latency within the eye-tracking software pipeline. In some instances, these missing segments also coincide with rapid head movements, which can momentarily shift the gaze beyond the calibrated tracking region.
 <h4>4.5.3 Left-Right Eye Imbalance</h4></p>
 
 <p>An additional irregularity observed in the gaze data was the imbalance between left- and right-eye recordings. As illustrated in Figure 4.12, the proportion of entries generated by each eye varied considerably across samples. In Sample A, right-eye events accounted for approximately 60% of all records, whereas in Sample B, the trend reversed, with the left eye contributing about 65%.</p>
 
-<figure><img src="assets/images/figure4-12.png" alt="Figure 4.12 Pie Charts of Eye Gaze Log Entry Components in Two Samples"><figcaption>Figure 4.12 Pie Charts of Eye Gaze Log Entry Components in Two Samples</figcaption></figure>
+<figure><img src="assets/images/figure4-12-1.png" alt="Figure 4.12 Pie Charts of Eye Gaze Log Entry Components in Two Samples"></figure>
+<figure><img src="assets/images/figure4-12-2.png" alt="Figure 4.12 Pie Charts of Eye Gaze Log Entry Components in Two Samples"><figcaption>Figure 4.12 Pie Charts of Eye Gaze Log Entry Components in Two Samples</figcaption></figure>
 
-<p><strong>Figure 4.12</strong> Pie Charts of Eye Gaze Log Entry Components in Two Samples</p>
+
 
 <p>This asymmetric result suggests that the logging mechanism may not consistently record both eyes simultaneously. A plausible explanation is that when both eyes fixate on the same cockpit element, the system registers only one active stream, typically whichever eye first crosses the region boundary. While this imbalance does not invalidate the overall gaze trajectories, it introduces potential bias when analyzing fixation density or cross-eye coordination. To improve reliability, future sessions should include periodic recalibration and, if possible, enforce synchronized dual-eye logging to ensure balanced data capture.
 <h4>4.5.4 Unmatched Entry–Exit Pairs</h4></p>
@@ -407,7 +421,7 @@ blockquote {
 
 <figure><img src="assets/images/figure4-13.png" alt="Figure 4.13 Sample of Unmatched Entry–Exit Pairs"><figcaption>Figure 4.13 Sample of Unmatched Entry–Exit Pairs</figcaption></figure>
 
-<p><strong>Figure 4.13</strong> Sample of Unmatched Entry–Exit Pairs</p>
+
 
 <p>These anomalies are most likely caused by overlapping or ambiguously defined region boundaries in the cockpit interface layout. When the gaze point transitions along shared borders, even small estimation errors in gaze coordinates can cause the tracker to misclassify the region change, resulting in skipped or mismatched entries. Another contributing factor may be short data gaps between consecutive samples, which interrupt the continuity of gaze tracking and prevent proper event pairing.</p>
 
@@ -417,7 +431,7 @@ blockquote {
 
 <p>Overall, the gaze logs are sufficient for identifying major attention shifts between cockpit instruments but not yet precise enough for detailed fixation analysis. Future improvements should therefore focus on refining region boundaries, stabilizing signal capture, and automating artifact detection to enhance the accuracy and consistency of gaze-based behavioral evaluation.</p>
 
-<p>---
+<p>
 <h2>5. Future Goals & Gantt Chart (AY2025/26 Sem 2 Plan)</h2>
 <h3>5.1 Testing & Validation</h3></p>
 
@@ -432,7 +446,7 @@ blockquote {
 <p>Work on multimodal fusion will involve reviewing and comparing integration strategies that combine gaze, speech, and physiological signals. Both feature-level and decision-level approaches will be examined, and a prototype pipeline will be developed to test alignment methods, modelling options, and the consistency of cross-modal behavioral interpretation.</p>
 
 <p>Finally, there will be a buffer period before the middle of the semester for troubleshooting, retesting, and delayed integration. This ensures that each refined subsystem meets data quality and robustness requirements before progressing to broader validation activities.
-<h3>5.2 Integration & Experiments → AI Report</h3></p>
+<h3>5.2 Integration and Experiments to form AI Report</h3></p>
 
 <p>In the second half of the project, the focus will shift toward system integration with experimental validation combined into the AI-assisted reporting, consolidating all previously developed modules into a unified and operational framework.</p>
 
@@ -448,18 +462,18 @@ blockquote {
 
 <figure><img src="assets/images/figure5-1.png" alt="Figure 5.1 Gantt Chart (Sem 2 first half)"><figcaption>Figure 5.1 Gantt Chart (Sem 2 first half)</figcaption></figure>
 
-<p><strong>Figure 5.1</strong> Gantt Chart (Sem 2 first half)</p>
+
 
 <figure><img src="assets/images/figure5-2.png" alt="Figure 5.2 Gantt Chart (Sem 2 second half)"><figcaption>Figure 5.2 Gantt Chart (Sem 2 second half)</figcaption></figure>
 
-<p><strong>Figure 5.2</strong> Gantt Chart (Sem 2 second half)</p>
 
-<p>---
+
+<p>
 <h2>6. Conclusion</h2></p>
 
 <p>This project establishes a foundation for modernizing Pilot Enhancing Monitoring (PM) training through a dual-focus approach: accessibility via VR-based simulation and improving objectivity through multimodal, AI-assisted evaluation. The prototype demonstrates that immersive VR environments can replicate key procedural elements of flight monitoring, while integrated gaze, speech, and event data enable deeper insight into trainee performance beyond traditional observation. Preliminary findings have clarified both technical challenges and methodological opportunities, leading to the next phase of system integration and evaluation. Moving forward, the project will focus on refining data synchronization, enhancing recognition accuracy, and using AI to learn how different inputs can be combined into meaningful, evidence-based feedback. Ultimately, our work aims to shift PM training toward a more transparent, scalable, and learner-centered paradigm—one that emphasizes understanding and improvement over bare numerical scoring.</p>
 
-<p>---
+<p>
 <h2>References</h2></p>
 
 <p>Ahlstrom, U., & Friedman-Berg, F. J. (2006). Using eye movement activity as a correlate of cognitive workload. <em>International Journal of Industrial Ergonomics, 36</em>(7), 623–636. https://doi.org/10.1016/j.ergon.2006.04.002</p>
@@ -520,101 +534,17 @@ blockquote {
 
 <p>Zhou, J., Jung, J. Y., & Chen, F. (2015). Dynamic workload adjustments in human-machine systems based on GSR features. In J. Abascal, S. B Shum, & M. Fetter (Eds.), <em>Human-Computer Interaction – INTERACT 2015, Part I</em> (Lecture Notes in Computer Science, Vol. 9296, pp. 550-558). Springer. https://link-springer-com.libproxy1.nus.edu.sg/chapter/10.1007/978-3-319-22701-6_40</p>
 
-<p>---
+<p>
 <h2>Appendix</h2>
-<h3>Python Script for Data Preprocessing</h3></p>
-
-<p><pre class="code"><code class="language-python">import pandas as pd
-import openpyxl
-from openpyxl import load_workbook
-from openpyxl.utils import get_column_letter
-
-print(pd.__version__)
-print(openpyxl.__version__)
-
-file = input("Enter file name (without .csv): ").strip()
-OFFSET = input("Enter OFFSET in seconds (default 0): ").strip()
-OFFSET = float(OFFSET) if OFFSET else 0.0
-
-input_file = file+".csv"
-output_file = file+"-off"+str(OFFSET)+".xlsx"
-
-# Read CSV as plain text (one column first)
-with open(input_file, "r", encoding="utf-8") as f:
-    lines = f.readlines()
-
-df = pd.DataFrame({"raw": [line.strip() for line in lines if line.strip()]})
-raw_series = df.fillna("").astype(str).agg(" ".join, axis=1)
-print(raw_series.shape)
-df = pd.DataFrame({"raw": raw_series})
-
-# Split into parts
-df["Time Stamp"] = df["raw"].str.extract(r"\[(.*?)\]")
-df["Time Stamp"] = pd.to_numeric(df["Time Stamp"], errors="coerce")
-df["Title"] = df["raw"].str.extract(r"\](.*?):")
-df["Description"] = df["raw"].str.split(":", n=1).str[1]
-df["Aligned"] = df["Time Stamp"] + OFFSET
-
-def fmt_mmss(t):
-    if pd.isna(t):
-        return ""
-    sign = "-" if t &lt; 0 else ""
-    t = abs(float(t))
-    m = int(t // 60)
-    s = t - m * 60
-    # Keep millisecond precision if fractional seconds exist
-    out = f"{m:02d}:{s:06.3f}" if (s % 1) else f"{m:02d}:{int(s):02d}"
-    # Trim trailing zeros if we used 3 decimals
-    if "." in out:
-        out = out.rstrip("0").rstrip(".")
-    return sign + out
-
-df["Aligned Time (mm:ss)"] = df["Aligned"].apply(fmt_mmss)
-df["Time (mm:ss)"] = df["Time Stamp"].apply(fmt_mmss)
-
-df = df[["Time Stamp", "Aligned", "Aligned Time (mm:ss)", "Title", "Description"]]
-print(df)
-
-df_speech = df[df["Title"].str.strip().eq("SPEECH")]
-df_eyegaze = df[df["Title"].str.strip().eq("EyeGaze")]
-df_others = df[~df["Title"].str.strip().isin(["SPEECH", "EyeGaze"])]
-
-#Parse EyeGaze
-desc = df_eyegaze["Description"].fillna("").astype(str).str.strip()
-parsed = desc.str.extract(r'^\s*([A-Za-z]+)\s*[_-]\s*([A-Za-z]+)\s*[_-]\s*([A-Za-z0-9]+)\b\s*(.*)$')
-parsed.columns = ["left/right", "enter/exit", "Place", "extra description"]
-parsed["left/right"] = parsed["left/right"].str.lower().replace({"l":"left","r":"right"})
-parsed["enter/exit"] = parsed["enter/exit"].str.lower().replace({"in":"enter","out":"exit"})
-df_eyegaze = pd.concat([df_eyegaze, parsed], axis=1)
-
-with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
-    df.to_excel(writer, index=False, sheet_name="All")
-    df_speech.to_excel(writer, index=False, sheet_name="SPEECH")
-    df_eyegaze.to_excel(writer, index=False, sheet_name="EyeGaze")
-    df_others.to_excel(writer, index=False, sheet_name="Others")
-
-wb = load_workbook(output_file)
-
-for ws in wb.worksheets:
-    for col in ws.columns:
-        max_length = 0
-        col_letter = col[0].column_letter
-        for cell in col:
-            try:
-                value = str(cell.value)
-                if len(value) &gt; max_length:
-                    max_length = len(value)
-            except:
-                pass
-        ws.column_dimensions[col_letter].width = (max_length + 2) * 1.2
-    
-    last_col = get_column_letter(ws.max_column)
-    last_row = ws.max_row
-    ws.auto_filter.ref = f"A1:{last_col}{last_row}"
-    ws.freeze_panes = "A2"
-
-wb.save(output_file)
-</code></pre></p>
+<h3>Python Script for Data Preprocessing</h3>
+<p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/Preprocess.py" target="_blank">
+  View Python File on GitHub: Preprocess Python Pipeline. Manual input version.
+</a></p>
+<p><a href="https://github.com/zhangyn0218/cde4301-project/blob/main/PreprocessDedicated.py" target="_blank">
+  View Python File on GitHub: Preprocess Python Pipeline. Specific pair of log and video recording.
+</a></p>
 </div>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script type="module" src="./assets/Tables/Table_1.js"></script>
 </body>
 </html>
